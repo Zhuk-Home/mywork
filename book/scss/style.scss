@@ -1,0 +1,693 @@
+@import "_nullstyle";
+
+
+$bgc_color: #ffeabc;
+
+
+// TODO Preloader Start
+.preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #331805;
+    z-index: 1001;
+
+
+    .book {
+
+        position: relative;
+        --color: #fff;
+        --duration: 6.8s;
+        width: 32px;
+        height: 12px;
+        top: 50%;
+        left: 50%;
+        margin: 32px 0 0 0;
+        //Demo
+        zoom: 1.5;
+
+
+        .inner {
+            width: 32px;
+            height: 12px;
+            position: relative;
+            transform-origin: 2px 2px;
+            transform: rotateZ(-90deg);
+            animation: book var(--duration) ease infinite;
+
+            .left,
+            .right {
+                width: 60px;
+                height: 4px;
+                top: 0;
+                border-radius: 2px;
+                background: var(--color);
+                position: absolute;
+
+                &:before {
+                    content: '';
+                    width: 48px;
+                    height: 4px;
+                    border-radius: 2px;
+                    background: inherit;
+                    position: absolute;
+                    top: -10px;
+                    left: 6px;
+                }
+            }
+
+            .left {
+                right: 28px;
+                transform-origin: 58px 2px;
+                transform: rotateZ(90deg);
+                animation: left var(--duration) ease infinite;
+            }
+
+            .right {
+                left: 28px;
+                transform-origin: 2px 2px;
+                transform: rotateZ(-90deg);
+                animation: right var(--duration) ease infinite;
+            }
+
+            .middle {
+                width: 32px;
+                height: 12px;
+                border: 4px solid var(--color);
+                border-top: 0;
+                border-radius: 0 0 9px 9px;
+                transform: translateY(2px);
+            }
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            position: absolute;
+            left: 50%;
+            top: 0;
+
+            li {
+                height: 4px;
+                border-radius: 2px;
+                transform-origin: 100% 2px;
+                width: 48px;
+                right: 0;
+                top: -10px;
+                position: absolute;
+                background: var(--color);
+                transform: rotateZ(0deg) translateX(-18px);
+                animation-duration: var(--duration);
+                animation-timing-function: ease;
+                animation-iteration-count: infinite;
+                $i: 0;
+
+                @while $i < 19 {
+                    &:nth-child(#{$i}) {
+                        animation-name: page-#{$i};
+                    }
+
+                    $i: $i+1;
+                }
+            }
+        }
+    }
+
+    @keyframes page-0 {
+        4% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        13%,
+        54% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        63% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes page-1 {
+        5.86% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        14.74%,
+        55.86% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        64.74% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes page-2 {
+        7.72% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        16.48%,
+        57.72% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        66.48% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes page-3 {
+        9.58% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        18.22%,
+        59.58% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        68.22% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes page-4 {
+        11.44% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        19.96%,
+        61.44% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        69.96% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes page-5 {
+        13.3% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        21.7%,
+        63.3% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        71.7% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes page-6 {
+        15.16% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        23.44%,
+        65.16% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        73.44% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes page-7 {
+        17.02% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        25.18%,
+        67.02% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        75.18% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes page-8 {
+        18.88% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        26.92%,
+        68.88% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        76.92% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes page-9 {
+        20.74% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        28.66%,
+        70.74% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        78.66% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes page-10 {
+        22.6% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        30.4%,
+        72.6% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        80.4% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes page-11 {
+        24.46% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        32.14%,
+        74.46% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        82.14% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes page-12 {
+        26.32% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        33.88%,
+        76.32% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        83.88% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes page-13 {
+        28.18% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        35.62%,
+        78.18% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        85.62% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes page-14 {
+        30.04% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        37.36%,
+        80.04% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        87.36% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes page-15 {
+        31.9% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        39.1%,
+        81.9% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        89.1% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes page-16 {
+        33.76% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        40.84%,
+        83.76% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        90.84% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes page-17 {
+        35.62% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        42.58%,
+        85.62% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        92.58% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes page-18 {
+        37.48% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+
+        44.32%,
+        87.48% {
+            transform: rotateZ(180deg) translateX(-18px);
+        }
+
+        94.32% {
+            transform: rotateZ(0deg) translateX(-18px);
+        }
+    }
+
+    @keyframes left {
+        4% {
+            transform: rotateZ(90deg);
+        }
+
+        10%,
+        40% {
+            transform: rotateZ(0deg);
+        }
+
+        46%,
+        54% {
+            transform: rotateZ(90deg);
+        }
+
+        60%,
+        90% {
+            transform: rotateZ(0deg);
+        }
+
+        96% {
+            transform: rotateZ(90deg);
+        }
+    }
+
+    @keyframes right {
+        4% {
+            transform: rotateZ(-90deg);
+        }
+
+        10%,
+        40% {
+            transform: rotateZ(0deg);
+        }
+
+        46%,
+        54% {
+            transform: rotateZ(-90deg);
+        }
+
+        60%,
+        90% {
+            transform: rotateZ(0deg);
+        }
+
+        96% {
+            transform: rotateZ(-90deg);
+        }
+    }
+
+    @keyframes book {
+        4% {
+            transform: rotateZ(-90deg);
+        }
+
+        10%,
+        40% {
+            transform: rotateZ(0deg);
+            transform-origin: 2px 2px;
+        }
+
+        40.01%,
+        59.99% {
+            transform-origin: 30px 2px;
+        }
+
+        46%,
+        54% {
+            transform: rotateZ(90deg);
+        }
+
+        60%,
+        90% {
+            transform: rotateZ(0deg);
+            transform-origin: 2px 2px;
+        }
+
+        96% {
+            transform: rotateZ(-90deg);
+        }
+    }
+}
+
+// TODO Preloader End
+
+body {
+    background-color: #050401;
+    color: #e5e5e5;
+}
+
+#wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80em;
+}
+
+#container {
+    float: left;
+    padding: 1em;
+    width: 100%;
+}
+
+* {
+    position: relative;
+}
+
+
+.block_bottom #page-numbers {
+    display: none;
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.block_bottom #page-numbers>li:last-child {
+    text-align: right;
+}
+
+
+
+
+.open-book {
+
+    position: relative;
+    background: $bgc_color;
+    box-shadow: 0 0 10px rgba(0, 0, 0), inset 0 0 50px #6b6250;
+    color: #6b6250;
+    margin: 100px 0px 0px 0px;
+
+    &:before {
+        background-color: #5f2e0b;
+        background: rgb(79, 38, 9);
+        background: radial-gradient(circle, #5f2e0b 0%, #5f2e0b 90%, #331b09 100%, #2f1806 100%);
+        box-shadow: 0 0 10px #331b09, inset 0 0 10px #331b09;
+        border-radius: 0.25em;
+        bottom: -1em;
+        content: '';
+        left: -1em;
+        position: absolute;
+        right: -1em;
+        top: -1em;
+        z-index: -1;
+    }
+
+    &:after {
+        background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 46%, rgba(0, 0, 0, 0.5) 49%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.5) 51%, rgba(0, 0, 0, 0.2) 52%, transparent 100%);
+        bottom: -1em;
+        content: '';
+        left: 50%;
+        position: absolute;
+        top: -1em;
+        transform: translate(-50%, 0);
+        width: 4em;
+        z-index: 1;
+    }
+
+    article {
+        width: 100%;
+        height: 60vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .left_page {
+
+            width: 100%;
+            height: 100%;
+            background: url(../img/paper-005.png) center/cover;
+            // background: rgb(24, 253, 36);
+        }
+
+        .right_page {
+            width: 100%;
+            height: 100%;
+            background: url(../img/paper-005.png) center/cover;
+            // background: rgb(255, 0, 0);
+        }
+    }
+
+    /* .block_top/.block_bottom */
+    .block_top:before,
+    .block_top:after,
+    .block_bottom:before,
+    .block_bottom:after {
+        background: #fff;
+        border-radius: 25%;
+        content: '';
+        height: 2em;
+        position: absolute;
+        z-index: -1;
+        width: calc(50% + 2em);
+        background-color: $bgc_color;
+    }
+
+    .block_top:before,
+    .block_bottom:before,
+    .block_bottom:after {
+        border-top-left-radius: 0;
+    }
+
+    .block_top:after,
+    .block_bottom:before,
+    .block_bottom:after {
+        border-top-right-radius: 0;
+    }
+
+    .block_top:before,
+    .block_top:after,
+    .block_bottom:after {
+        border-bottom-right-radius: 0;
+    }
+
+    .block_top:before,
+    .block_top:after,
+    .block_bottom:before {
+        border-bottom-left-radius: 0;
+    }
+
+    .block_top:before,
+    .block_top:after {
+        top: -2.65em;
+    }
+
+    .block_top:before,
+    .block_bottom:before {
+        right: 50%;
+    }
+
+    .block_top:before {
+        transform: rotate(-2deg);
+    }
+
+    .block_top:after,
+    .block_bottom:after {
+        left: 50%;
+    }
+
+    .block_top:after {
+        transform: rotate(2deg);
+    }
+
+    .block_bottom:before,
+    .block_bottom:after {
+        bottom: -2.65em;
+    }
+
+    .block_bottom:before {
+        transform: rotate(2deg);
+    }
+
+    .block_bottom:after {
+        transform: rotate(-2deg);
+    }
+
+    .block_top>*:last-child,
+    .block_bottom>*:last-child {
+        text-align: right;
+    }
+
+    .block_bottom #page-numbers {
+        display: block;
+    }
+
+    h1 {
+        font-size: 100px;
+        text-align: center;
+        font-family: verdana;
+
+        opacity: 0;
+
+        &:hover {
+            // animation: smoke 2s cubic-bezier(.63, .05, .87, .78) forwards;
+        }
+
+        @keyframes smoke {
+            0% {
+                transform: rotate(0deg) translate(0px, 0px);
+                opacity: 1;
+                filter: blur(1px);
+            }
+
+            100% {
+                transform: rotate(0deg) translate(200px, -100px);
+                opacity: 0;
+                filter: blur(20px);
+            }
+        }
+    }
+}
+
+/* Body Copy */
